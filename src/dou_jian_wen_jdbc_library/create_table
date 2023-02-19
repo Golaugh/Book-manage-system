@@ -1,0 +1,23 @@
+CREATE TABLE `books` (
+  `bid` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(45) NOT NULL COMMENT '书籍名称',
+  `count` int(11) NOT NULL COMMENT '存量',
+  `total` int(11) NOT NULL COMMENT '总量',
+  PRIMARY KEY (`bid`),
+  UNIQUE KEY `name_UNIQUE` (`name`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='书籍信息';
+
+CREATE TABLE `readers` (
+  `rid` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(45) NOT NULL,
+  PRIMARY KEY (`rid`),
+  UNIQUE KEY `name_UNIQUE` (`name`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='借阅者信息';
+
+CREATE TABLE `records` (
+  `reid` int(11) NOT NULL AUTO_INCREMENT,
+  `rid` int(11) NOT NULL COMMENT '谁借的',
+  `bid` int(11) NOT NULL COMMENT '借的哪本书',
+  `borrowed_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '借阅时间',
+  PRIMARY KEY (`reid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='借阅记录';
