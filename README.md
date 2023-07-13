@@ -1,2 +1,2 @@
 # Book-manage-system
-Three math-major students  work together to build a book-manage-system, which seems quite interesting.
+Three math-major students worked together to build a book-manage-system, which seems quite exhilarating yet banal.
